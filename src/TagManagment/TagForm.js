@@ -1,6 +1,5 @@
-import  { useState } from 'react'
-import './TagForm.css'
-// import PropTypes from 'prop-types'
+import  { useState } from 'react';
+import './TagForm.css';
 
 function TagForm({ addTag, index }) {
     const [tagInput, setTagInput] = useState([])
@@ -27,10 +26,5 @@ function TagForm({ addTag, index }) {
             </div>
     )
 }
-
-// TagManager.propTypes = {
-//     tagList: PropTypes.arrayOf(PropTypes.string),
-//     createNewTag: PropTypes.func
-// }
 
 export default TagForm
