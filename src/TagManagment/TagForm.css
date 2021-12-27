@@ -1,0 +1,16 @@
+  .input-for-tag{
+    flex: 1;
+    border: none;
+    height: 26px;
+    font-size: 20px;
+    padding: 5px;
+    border-bottom: solid 3px rgb(205, 199, 199);
+    outline: none;
+    margin: 8px 8px 8px 28px;
+  }
+
+
+
+.tag-title {
+    margin-top: 3px;
+  }

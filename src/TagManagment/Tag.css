@@ -1,0 +1,15 @@
+ .tag {
+    height: 40px;
+    width: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    font-size: 20px;
+    font-family: "Raleway";
+    list-style: none;
+    border-radius: 6px;
+    margin: 8px 8px 8px 28px;
+    background: rgb(205, 199, 199);
+    grid-template-columns: auto auto; 
+}

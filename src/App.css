@@ -1,0 +1,17 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 48px;
+    font-family: 'Raleway';
+  }
+h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+p {
+    font-size: 20px;
+    margin: 0px 0px 5px 30px
+}
