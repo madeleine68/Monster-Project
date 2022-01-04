@@ -40,7 +40,7 @@ function StudentList ({ data, addTag }){
               <input className="input-search"
                 type="search"
                 placeholder="Search by name"
-                onChange={e => setSearchTerm(e.target.value)}
+                onChange={e => setSearchTerm(e.target.value.toLowerCase())}
               />
               <input className="input-search"
                 type="search"

@@ -1,5 +1,5 @@
 import "./Student.css";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ReactComponent as Plus} from './plus.svg';
 import { ReactComponent as Minus} from './minus.svg';
 import TagForm from "../TagManagment/TagForm";
@@ -7,8 +7,11 @@ import Tag from "../TagManagment/Tag";
 
 function Student ({ item, addTag, index }){
 
-    const avg = item.grades.reduce((sum, curr) => sum + Number(curr), 0) /
-    item.grades.length;
+    const avg = useMemo(() => {
+        const average = item.grades.reduce((sum, curr) => sum + Number(curr), 0) /
+        item.grades.length;
+        return average;
+    },[item.grades])
 
     const [gradeList, setGradeList] = useState(false)
     function toggleShowGrades() {
@@ -42,11 +45,11 @@ function Student ({ item, addTag, index }){
                         </div>
                     }
                 </div>
-                {item.tags.length > 0
-                    ? item.tags.map((tag, index) => {
+                {item.tags.length > 0 && 
+                     item.tags.map((tag, index) => {
                         return <Tag key={index.toString()} tag={tag} />;
                         })
-                    : null}
+                    }
                 <TagForm index={index} addTag={addTag} />   
             </div> 
            
