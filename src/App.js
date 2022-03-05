@@ -1,25 +1,25 @@
-import './App.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import StudentList from './StudentList/StudentList';
+import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import StudentList from "./StudentList/StudentList";
 
 function App() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("https://api.hatchways.io/assessment/students")
-    .then(res => {
-      
-      let newStudentData = [];
-      res.data.students.map(student => {
-        let addTags = student;
-        addTags.tags = [];
-        newStudentData.push(addTags);
-      });
-      setData(newStudentData);
+    axios
+      .get("https://api.hatchways.io/assessment/students")
+      .then((res) => {
+        let newStudentData = [];
+        res.data.students.map((student) => {
+          let addTags = student;
+          addTags.tags = [];
+          newStudentData.push(addTags);
+        });
+        setData(newStudentData);
       })
-    .catch(err => console.log(err))
-  }, [])
+      .catch((err) => console.log(err));
+  }, []);
 
   function addTag(tagName, index) {
     const tagForStudentData = [...data];
@@ -28,8 +28,8 @@ function App() {
   }
 
   return (
-    <div className="App">  
-        <StudentList data={data} addTag={addTag}/> 
+    <div className="App">
+      <StudentList data={data} addTag={addTag} />
     </div>
   );
 }

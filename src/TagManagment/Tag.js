@@ -1,7 +1,7 @@
-import './Tag.css'
+import "./Tag.css";
 
 const Tag = ({ tag }) => {
-    return <div className="tag">{tag}</div>;
-  };
+  return <div className="tag">{tag}</div>;
+};
 
 export default Tag;
